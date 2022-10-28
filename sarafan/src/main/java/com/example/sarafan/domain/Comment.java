@@ -1,15 +1,10 @@
 package com.example.sarafan.domain;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonView;
-import lombok.EqualsAndHashCode;
-import org.hibernate.annotations.ManyToAny;
-
 import javax.persistence.*;
 
 @Entity
 @Table
-@EqualsAndHashCode(of = {"id"})
 public class Comment {
 
     @Id
@@ -69,5 +64,20 @@ public class Comment {
 
     public void setAuthor(User author) {
         this.author = author;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Comment)) return false;
+
+        Comment comment = (Comment) o;
+
+        return getId() != null ? getId().equals(comment.getId()) : comment.getId() == null;
+    }
+
+    @Override
+    public int hashCode() {
+        return getId() != null ? getId().hashCode() : 0;
     }
 }
