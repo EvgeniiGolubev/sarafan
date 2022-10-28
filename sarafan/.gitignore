@@ -1,0 +1,14 @@
+# Default ignored files
+/shelf/
+/.idea/workspace.xml
+# Datasource local storage ignored files
+/../../../../../../../:\Users\79523\JavaProjects\Learning_web_Java\sarafan\.idea/dataSources/
+/dataSources.local.xml
+# Editor-based HTTP Client requests
+/httpRequests/
+
+/.idea
+/target
+/node_modules
+*.iml
+/src/main/resources/static/js
